@@ -1,0 +1,20 @@
+{
+  "contest": {
+    "id": "asprocon7",
+    "title": "7th Asprova Programming Contest",
+    "url": "https://atcoder.jp/contests/asprocon7"
+  },
+  "tasks": [
+    {
+      "id": "asprocon7_a",
+      "label": "A",
+      "title": "Car Assembly Line",
+      "url": "https://atcoder.jp/contests/asprocon7/tasks/asprocon7_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
