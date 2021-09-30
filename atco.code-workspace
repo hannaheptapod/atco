@@ -2,9 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../../Library/Preferences/atcoder-cli-nodejs"
 		}
 	],
 	"settings": {
