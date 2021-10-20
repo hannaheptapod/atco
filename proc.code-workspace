@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "pg"
+		},
+		{
+			"path": "../../Library/Preferences/atcoder-cli-nodejs"
 		}
 	],
 	"settings": {
@@ -109,7 +115,7 @@
 				"icon": "terminal-powershell"
 			}
 		},
-		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/atco/bin/python",
+		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/proc/bin/python",
 		"terminal.integrated.automationShell.osx": "conda activate proc",
 	}
 }
