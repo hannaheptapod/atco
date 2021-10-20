@@ -110,6 +110,6 @@
 			}
 		},
 		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/atco/bin/python",
-		"terminal.integrated.automationShell.osx": "conda activate atco",
+		"terminal.integrated.automationShell.osx": "conda activate proc",
 	}
 }
