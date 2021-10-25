@@ -1,15 +1,14 @@
 n = int(input())
-l = []
-cnt = []
+d = {}
+mx = 1
 for _ in range(n):
     s = input()
-    if s not in l:
-        l.append(s)
-        cnt.append(1)
-    else: cnt[l.index(s)] += 1
-mx = max(cnt)
+    if s not in d: d[s] = 1
+    else:
+        d[s] = d[s] + 1
+        if d[s] > mx: mx = d[s]
 ans = []
-for i in range(len(l)):
-    if cnt[i] == mx: ans.append(l[i])
+for di in d:
+    if d[di] == mx: ans.append(di)
 ans.sort()
 _ = [print(ai) for ai in ans]
