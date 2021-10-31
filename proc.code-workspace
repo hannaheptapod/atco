@@ -117,5 +117,9 @@
 		},
 		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/proc/bin/python",
 		"terminal.integrated.automationShell.osx": "conda activate proc",
+		"editor.fontSize": 14,
+		"scm.inputFontSize": 14,
+		"terminal.integrated.fontSize": 14,
+		"printcode.fontSize": 14,
 	}
 }
