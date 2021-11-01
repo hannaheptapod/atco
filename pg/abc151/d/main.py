@@ -1,27 +1,27 @@
-from itertools import combinations
 from collections import deque
-INF = 10**2
 h, w = map(int, input().split())
+INF = h*w
 s = [input() for _ in range(h)]
-def solve(sy, sx, gy, gx):
+def solve(si, sj):
+    res = -1
     dst = [[INF for _ in range(w)] for _ in range(h)]
-    def bfs():
-        dq = deque()
-        dq.insert(0, (sy, sx))
-        dst[sy][sx] = 0
-        while len(dq):
-            y, x = dq.pop()
-            if y == gy and x == gx: break
-            for i in range(4):
-                ny, nx = y+[1, 0, -1, 0][i], x+[0, 1, 0, -1][i]
-                if ny>=0 and ny<h and nx>=0 and nx<w and s[ny][nx] != '#' and dst[ny][nx] == INF:
-                    dq.insert(0, (ny, nx))
-                    dst[ny][nx] = dst[y][x] + 1
-        return dst[gy][gx]
-    return bfs()
+    dq = deque()
+    dq.appendleft((si, sj))
+    dst[si][sj] = 0
+    while len(dq):
+        y, x = dq.pop()
+        for i in range(4):
+            ny, nx = y+[1, 0, -1, 0][i], x+[0, 1, 0, -1][i]
+            if ny>=0 and ny<h and nx>=0 and nx<w and s[ny][nx] != '#' and dst[ny][nx] == INF:
+                dq.appendleft((ny, nx))
+                dst[ny][nx] = dst[y][x] + 1
+    for gi in range(h):
+        for gj in range(w):
+            d = dst[gi][gj]
+            if d < INF: res = max(res, d)
+    return res
 ans = -1
-for combi in combinations(range(h*w), 2):
-    si, sj, gi, gj = combi[0]//w, combi[0]%w, combi[1]//w, combi[1]%w
-    if s[si][sj] == '#' or s[gi][gj] == '#': continue
-    ans = max(ans, solve(si, sj, gi, gj))
+for si in range(h):
+    for sj in range(w):
+        if s[si][sj] != '#': ans = max(ans, solve(si, sj))
 print(ans)
