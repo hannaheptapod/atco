@@ -1,0 +1,6 @@
+n = input()
+leng = len(n)
+n0 = int(n[0])
+sm = sum(int(ni) for ni in n)
+ans = max(sm, n0-1 + (leng-1)*9)
+print(ans)
