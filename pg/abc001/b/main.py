@@ -1,12 +1,7 @@
 m = int(input())
-km = m / 1000
-vv = 0
-if m <= 100 and m <= 5000:
-    vv = 10 * km
-elif km >= 6 and km <= 30:
-    vv = km + 50
-elif km >= 35 and km <= 70:
-    vv = (km - 30) / 5 + 80
-else:
-    vv = 89
-print('{:02}'.format(int(vv)))
+if m < 100: vv = 0
+elif m <= 5000: vv = m*10//1000
+elif m <= 30000: vv = m//1000 + 50
+elif m <= 70000: vv = (m//1000 - 30)//5 + 80
+else: vv = 89
+print('{:02}'.format(vv))
