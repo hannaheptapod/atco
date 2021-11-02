@@ -1,0 +1,12 @@
+{
+	"id": 26987674,
+	"epoch_second": 1635838720,
+	"problem_id": "code_festival_2017_qualc_b",
+	"contest_id": "code-festival-2017-qualc",
+	"user_id": "Jinks",
+	"language": "PyPy3 (7.3.0)",
+	"point": 200,
+	"length": 125,
+	"result": "AC",
+	"execution_time": 337
+}
