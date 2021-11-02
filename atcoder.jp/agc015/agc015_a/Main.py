@@ -1,0 +1,5 @@
+n, a, b = map(int, input().split())
+if n == 1: ans = int(a == b)
+elif n == 2: ans = int(a <= b)
+else: ans = int(a <= b)*((b - a)*(n - 2) + 1)
+print(ans)
