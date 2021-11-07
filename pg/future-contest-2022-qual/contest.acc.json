@@ -1,0 +1,20 @@
+{
+  "contest": {
+    "id": "future-contest-2022-qual",
+    "title": "HACK TO THE FUTURE 2022 qual",
+    "url": "https://atcoder.jp/contests/future-contest-2022-qual"
+  },
+  "tasks": [
+    {
+      "id": "future_contest_2022_qual_a",
+      "label": "A",
+      "title": "Project Leader",
+      "url": "https://atcoder.jp/contests/future-contest-2022-qual/tasks/future_contest_2022_qual_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

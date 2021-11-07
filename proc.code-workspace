@@ -121,5 +121,6 @@
 		"scm.inputFontSize": 14,
 		"terminal.integrated.fontSize": 14,
 		"printcode.fontSize": 14,
+		"editor.acceptSuggestionOnEnter": "smart",
 	}
 }
