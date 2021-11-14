@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc071",
+    "title": "AtCoder Regular Contest 071",
+    "url": "https://atcoder.jp/contests/arc071"
+  },
+  "tasks": [
+    {
+      "id": "arc071_a",
+      "label": "C",
+      "title": "Dubious Document",
+      "url": "https://atcoder.jp/contests/arc071/tasks/arc071_a",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc071_b",
+      "label": "D",
+      "title": "###",
+      "url": "https://atcoder.jp/contests/arc071/tasks/arc071_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc071_c",
+      "label": "E",
+      "title": "TrBBnsformBBtion",
+      "url": "https://atcoder.jp/contests/arc071/tasks/arc071_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc071_d",
+      "label": "F",
+      "title": "Infinite Sequence",
+      "url": "https://atcoder.jp/contests/arc071/tasks/arc071_d",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
