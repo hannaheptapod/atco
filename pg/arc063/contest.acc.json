@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc063",
+    "title": "AtCoder Regular Contest 063",
+    "url": "https://atcoder.jp/contests/arc063"
+  },
+  "tasks": [
+    {
+      "id": "arc063_a",
+      "label": "C",
+      "title": "1D Reversi",
+      "url": "https://atcoder.jp/contests/arc063/tasks/arc063_a",
+      "directory": {
+        "path": "c",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc063_b",
+      "label": "D",
+      "title": "An Invisible Hand",
+      "url": "https://atcoder.jp/contests/arc063/tasks/arc063_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc063_c",
+      "label": "E",
+      "title": "Integers on a Tree",
+      "url": "https://atcoder.jp/contests/arc063/tasks/arc063_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc063_d",
+      "label": "F",
+      "title": "Snuke's Coloring 2",
+      "url": "https://atcoder.jp/contests/arc063/tasks/arc063_d",
+      "directory": {
+        "path": "f",
+        "testdir": "test",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
