@@ -1,14 +1,19 @@
 n = int(input())
 v = list(map(int, input().split()))
-l = [{}, {}]
+
+d = [{}, {}]
+
 for i in range(n):
-    if v[i] not in l[i%2]: l[i%2][v[i]] = 0
-    l[i%2][v[i]] += 1
-ls = [sorted(li.items(), key=lambda x:x[1], reverse=True) for li in l]
-if ls[0][0][0] != ls[1][0][0]: ans = n - (ls[0][0][1] + ls[1][0][1])
-elif ls[0][0][1] == n//2:
-    if ls[1][0][1] == n//2: ans = n//2
-    else: ans = n//2 - ls[1][1][1]
-elif ls[1][0][1]: ans = n//2 - ls[0][1][1]
-else: ans = n - max(ls[0][1][1] + ls[1][0][1], ls[0][0][1] + ls[1][1][1])
+    if v[i] not in d[i%2]: d[i%2][v[i]] = 0
+    d[i%2][v[i]] += 1
+
+l = [[[0, 0]], [[0, 0]]]
+for i in d[0].keys(): l[0] += [[d[0][i], i]]
+for i in d[1].keys(): l[1] += [[d[1][i], i]]
+l[0] = sorted(l[0], reverse=True)
+l[1] = sorted(l[1], reverse=True)
+
+if l[0][0][1] != l[1][0][1]: ans = n-(l[0][0][0] + l[1][0][0])
+else: ans = n-max(l[0][0][0] + l[1][1][0], l[0][1][0], l[1][0][0])
+
 print(ans)
