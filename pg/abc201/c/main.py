@@ -1,10 +1,10 @@
-s = input()
+S = input()
+
 ans = 0
-for n in range(10**4):
-    n = '{:04}'.format(n)
-    for i in range(10):
-        si = s[i]
-        if si == 'o' and str(i) not in n: break
-        if si == 'x' and str(i) in n: break
+for i in range(10**4):
+    p = format(i, '04')
+    for j in range(10):
+        if (S[j] == 'o' and str(j) not in p) or (S[j] == 'x' and str(j) in p): break
     else: ans += 1
+
 print(ans)

@@ -1,8 +1,14 @@
-h, n = map(int, input().split())
-l_mg = [list(map(int, input().split())) for _ in range(n)]
-for i in range(n): l_mg[i] = [l_mg[i][0]/l_mg[i][1]] + l_mg[i]
-l_mg.sort(reverse=True)
+INF = 10**9
+H, N = map(int, input().split())
 
-ans = -(-h//l_mg[0][1])*l_mg[0][2]
+dp = [0] + [INF]*H
 
+for _ in range(N):
+    a, b = map(int, input().split())
+
+    for i in range(1, H + 1):
+        if i < a: dp[i] = min(dp[i], b)
+        else: dp[i] = min(dp[i], dp[i-a] + b)
+
+ans = dp[H]
 print(ans)
