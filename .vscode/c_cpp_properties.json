@@ -3,17 +3,17 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/homebrew/include/**"
             ],
+            "defines": [],
             "macFrameworkPath": [
-                "/System/Library/Frameworks",
-                "/Library/Frameworks"
+                "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
-            "compilerPath": "/opt/homebrew/bin/g++-11",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++17",
+            "compilerPath": "/opt/homebrew/bin/g++",
             "intelliSenseMode": "macos-gcc-arm64",
-            "compilerArgs": []
+            "cppStandard": "c++14",
+            "cStandard": "c17"
         }
     ],
     "version": 4
