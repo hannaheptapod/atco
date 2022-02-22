@@ -1,6 +1,24 @@
+import sys
+sys.setrecursionlimit(10**6)
+
 N = int(input())
-rd = []
-for _ in range(N-1):
+G = [[] for _ in range(N+1)]
+for i in range(N-1):
     a, b = map(int, input().split())
-    rd.append[min(a,b), max(a,b)]
-rd.sort()
+    G[a].append(b)
+    G[b].append(a)
+for i in range(N+1): G[i].sort()
+
+ans = []
+
+def dfs(crr, pre):
+    ans.append(crr)
+
+    for nxt in G[crr]:
+        if nxt != pre:
+            dfs(nxt, crr)
+            ans.append(crr)
+
+dfs(1, -1)
+
+print(*ans)
