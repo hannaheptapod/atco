@@ -1,12 +1,12 @@
-import bisect
-l, q = map(int, input().split())
-cut = [0, l]
-for _ in range(q):
+import bisect, array
+
+L, Q = map(int, input().split())
+cut = array.array('i', [0, L])
+
+for _ in range(Q):
     c, x = map(int, input().split())
 
-    if c == 1:
-        bisect.insort(cut, x)
-    else:
-        pos = bisect.bisect(cut, x)
-        ans = cut[pos] - cut[pos - 1]
-        print(ans)
+    pos = bisect.bisect(cut, x)
+
+    if c == 1: cut.insert(pos, x)
+    else: print(cut[pos] - cut[pos - 1])
