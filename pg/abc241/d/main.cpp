@@ -8,12 +8,11 @@ int main() {
     int leng = 0;
 
     for (int i = 0; i < Q; i++) {
-        int c;
+        int c, x, k;
         cin >> c;
 
         switch (c) {
             case 1:
-                int x;
                 cin >> x;
                 break;
 
