@@ -1,0 +1,19 @@
+BasedOnStyle: Google
+AccessModifierOffset: -2
+AllowShortBlocksOnASingleLine: Always
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: true
+IndentCaseBlocks: true
+IndentCaseLabels: true
+IndentWidth: 4
+SpaceBeforeParens: ControlStatements
+BreakBeforeBraces: Attach
+BraceWrapping:
+  BeforeCatch: false
+  BeforeElse: false
+  BeforeLambdaBody: false
+  BeforeWhile: false
