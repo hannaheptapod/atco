@@ -6,6 +6,9 @@
 		{
 			"name": "pg",
 			"path": "./pg"
+		},
+		{
+			"path": "../../Library/Preferences/atcoder-cli-nodejs"
 		}
 	],
 	"settings": {
