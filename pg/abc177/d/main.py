@@ -11,4 +11,3 @@ for abi in AB:
 
 d = deque([1])
 cnt = 0
-
