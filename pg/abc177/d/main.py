@@ -9,5 +9,25 @@ for abi in AB:
     G[a].add(b)
     G[b].add(a)
 
-d = deque([1])
-cnt = 0
+ans = 1
+seen = [True] + [False]*N
+
+for i in range(1, N + 1):
+    if seen[i]: continue
+    
+    d = deque([i])
+    tmp = 1
+    while d:
+        now = d.popleft()
+        seen[now] = True
+        
+        for move in G[now]:
+            if seen[move]: continue
+            
+            seen[move] = True
+            d.append(move)
+            tmp += 1
+
+    ans = max(ans, tmp)
+
+print(ans)
