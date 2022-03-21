@@ -1,13 +1,13 @@
-k = int(input())
+from collections import deque
 
-n = i = 0
+K = int(input())
 
-while i < k:
-    n += 1
-    s = str(n)
+deq = deque([i for i in range(1, 10)])
+for _ in range(K):
+    x = deq.popleft()
+    if x%10: deq.append(10*x + x%10 - 1)
+    deq.append(10*x + x%10)
+    if x%10 < 9: deq.append(10*x + x%10 + 1)
 
-    if all([abs(int(s[j+1])-int(s[j]))<=1 for j in range(len(s)-1)]): i += 1
-
-ans = n
-
-print(ans)
+ans = x
+print(x)
