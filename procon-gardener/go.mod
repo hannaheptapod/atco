@@ -1,6 +1,4 @@
-module github.com/togatoga/procon-gardener
-
-replace github.com/togatoga/procon-gardener => ./
+module github.com/hannaheptapod/proc/tree/master/procon-gardener
 
 go 1.13
 
