@@ -1,17 +1,14 @@
-import array
-
 N, K = map(int, input().split())
-A = [-1] + list(map(int, input().split()))
+A = list(map(lambda x: int(x)-1, input().split()))
 
-arr = array.array('i', [1])
-now, cnt = 1, 1
-while True:
-    if A[now] in arr:
-        id = arr.index(A[now])
-        break
+dp = [[0]*(N+1) for _ in range(61)]
+for cu in range(N): dp[0][cu] = A[cu]
+for p in range(1, 61):
+    for cu in range(N): dp[p][cu] = dp[p-1][dp[p-1][cu]]
 
-    arr.append(A[now])
-    now = A[now]
-    cnt += 1
+cu = 0
+for p in range(60, -1, -1):
+    if K & 1<<p: cu = dp[p][cu]
 
-print(arr[id + (K - id)%(len(arr) - id)])
+ans = cu + 1
+print(ans)
