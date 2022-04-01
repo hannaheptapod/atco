@@ -1,4 +1,6 @@
-module github.com/togatoga/procon-gardener
+module github.com/togatoga/garten
+
+replace github.com/togatoga/garten => ./
 
 go 1.13
 

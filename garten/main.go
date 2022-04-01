@@ -25,7 +25,7 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
-const APP_NAME = "procon-gardener"
+const APP_NAME = "garten"
 const ATCODER_API_SUBMISSION_URL = "https://kenkoooo.com/atcoder/atcoder-api/results?user="
 
 type AtCoderSubmission struct {
@@ -411,16 +411,11 @@ func archiveCmd() {
 	}).([]AtCoderSubmission)
 
 	startTime := time.Now()
-	log.Printf("Archiving %d code...", len(ss))
+	log.Printf("Now archiving %d code...", len(ss))
 	funk.ForEach(ss, func(s AtCoderSubmission) {
 		url := fmt.Sprintf("https://atcoder.jp/contests/%s/submissions/%s", s.ContestID, strconv.Itoa(s.ID))
 
 		//log.Printf("Requesting... %s", url)
-		elapsedTime := time.Now().Sub(startTime)
-		if elapsedTime.Milliseconds() < 100 {
-			sleepTime := time.Duration(100 - elapsedTime.Milliseconds())
-			time.Sleep(time.Millisecond * sleepTime)
-		}
 		resp, err := http.Get(url)
 		defer resp.Body.Close()
 		startTime = time.Now()
@@ -536,7 +531,7 @@ func editCmd() {
 
 func main() {
 
-	app := cli.App{Name: "procon-gardener", Usage: "archive your AC submissions",
+	app := cli.App{Name: "garten", Usage: "archive your AC submissions",
 		Commands: []*cli.Command{
 			{
 				Name:    "archive",
