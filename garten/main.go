@@ -448,7 +448,7 @@ func archiveCmd() {
 				log.Println("Fail to archive the code at", filepath.Join(archiveDirPath, fileName))
 				return
 			}
-			log.Println("archived the code at ", filepath.Join(archiveDirPath, fileName))
+			log.Println(filepath.Join(archiveDirPath, fileName))
 			//If the archive repo is the git repo
 			//git add and git commit
 			if !isDirExist(filepath.Join(config.Atcoder.RepositoryPath, ".git")) {
