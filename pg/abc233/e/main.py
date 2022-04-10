@@ -1,4 +1,6 @@
-X = int(input())
+I = input()
+s = sum(int(a) for a in I)
+X = int(I)
 
-ans = 10*X // 9
+ans = (X*10 - s) // 9
 print(ans)
