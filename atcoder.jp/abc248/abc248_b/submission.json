@@ -1,0 +1,12 @@
+{
+	"id": 31006934,
+	"epoch_second": 1650110602,
+	"problem_id": "abc248_b",
+	"contest_id": "abc248",
+	"user_id": "Jinks",
+	"language": "PyPy3 (7.3.0)",
+	"point": 200,
+	"length": 94,
+	"result": "AC",
+	"execution_time": 69
+}
