@@ -1,5 +1,14 @@
+import bisect
+
 N = int(input())
 w = [int(input()) for _ in range(N)]
 
-ans = 1 + sum(w[i] < w[i+1] for i in range(N-1))
+mt = [w[0]]
+for wi in w[1:]:
+    if wi > mt[-1]: mt.append(wi)
+    else:
+        id = bisect.bisect_left(mt, wi)
+        mt[id] = wi
+
+ans = len(mt)
 print(ans)
