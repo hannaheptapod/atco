@@ -4,7 +4,6 @@
 			"path": "."
 		},
 		{
-			"name": "pg",
 			"path": "./pg"
 		},
 		{
@@ -12,6 +11,7 @@
 		}
 	],
 	"settings": {
-		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/proc/bin/python"
+		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/proc/bin/python",
+		"python.terminal.activateEnvInCurrentTerminal": true
 	}
 }
