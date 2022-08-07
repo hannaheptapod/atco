@@ -1,7 +1,7 @@
-int N, Q;
-
-void dfs(int cu, int pa = -1);
+#include <bits/stdc++.h>
+using namespace std;
 
 int main() {
+    cout << "Hello world." << endl;
     return 0;
 }
