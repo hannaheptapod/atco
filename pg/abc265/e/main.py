@@ -1,26 +1,31 @@
-from itertools import combinations_with_replacement
-
 MOD = 998244353
 
 N, M = map(int, input().split())
 A, B, C, D, E, F = map(int, input().split())
 
-isPar = [
-    A*D-B*C != 0 or A == B == 0 or C == D == 0,
-    C*F-D*E != 0 or C == D == 0 or E == F == 0,
-    E*B-F*A != 0 or E == F == 0 or A == B == 0
-]
+O = set(tuple(map(int, input().split())) for _ in range(M))
 
-dic = {}
-for ci in combinations_with_replacement(range(N+1), 3):
-    x, y, z = ci[0], ci[1]-ci[0], ci[2]-ci[1]
+dp = [[1]]
+for i in range(N):
+    nxt = [[0]*(i+2) for _ in range(i+2)]
 
-    dic[(A*x + C*y + E*z, B*x + D*y + F*z)] = N - (x + y + z)
+    for a in range(i+1):
+        for b in range(i+1):
+            x, y = a*A + b*C + (i-a-b)*E, a*B + b*D + (i-a-b)*F
 
-ans = 3**N % MOD
-for _ in range(M):
-    X, Y = map(int, input().split())
+            if (x+A, y+B) not in O:
+                nxt[a+1][b] += dp[a][b]
+                nxt[a+1][b] %= MOD
 
-    if (X, Y) in dic: ans = (ans-3**dic[(X, Y)])%MOD
+            if (x+C, y+D) not in O:
+                nxt[a][b+1] += dp[a][b]
+                nxt[a][b+1] %= MOD
 
+            if (x+E, y+F) not in O:
+                nxt[a][b] += dp[a][b]
+                nxt[a][b] %= MOD
+
+    dp = nxt
+
+ans = sum(sum(dpi) for dpi in dp) % MOD
 print(ans)

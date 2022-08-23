@@ -3,17 +3,21 @@ MOD = 998244353
 N = int(input())
 a = list(map(int, input().split()))
 
-ans = N
-dp = {i: {} for i in range(1, N+1)}
-for i in range(N):
-    for j in range(i, 0, -1):
-        for k in dp[j].items():
-            if a[i]+k[0] not in dp[j+1]: dp[j+1][a[i]+k[0]] = k[1]
-            else: dp[j+1][a[i]+k[0]] += k[1]
+ans = 0
+for i in range(1, N+1):
+    dp = [[[0 for _ in range(i)] for _ in range(i+1)] for _ in range(N+1)]
+    dp[0][0][0] = 1
 
-            if not (a[i]+k[0])%(j+1): ans = (ans+k[1])%MOD
+    for j in range(N):
+        for k in range(i+1):
+            for l in range(i):
+                dp[j+1][k][l] += dp[j][k][l]
+                dp[j+1][k][l] %= MOD
+                if k != i:
+                    dp[j+1][k+1][(l+a[j])%i] += dp[j][k][l]
+                    dp[j+1][k+1][(l+a[j])%i] %= MOD
 
-    if a[i] not in dp[1]: dp[1][a[i]] = 1
-    else: dp[1][a[i]] += 1
+        ans += dp[N][i][0]
+        ans %= MOD
 
 print(ans)

@@ -1,72 +1,16 @@
-MOD = 998244353
+"""
+There are N squares called Square 1 though Square N. You start on Square 1.
 
+Each of the squares from Square 1 through Square N−1 has a die on it.
+The die on Square i is labeled with the integers from 0 through A_i, each occurring with equal probability. (Die rolls are independent of each other.)
 
-class ModInt:
-    def __init__(self, x): self.x = x % MOD
+Until you reach Square N, you will repeat rolling a die on the square you are on.
+Here, if the die on Square x rolls the integer y, you go to Square x+y.
 
-    def __str__(self): return str(self.x)
+Find the expected value, modulo 998244353, of the number of times you roll a die.
+"""
 
-    __repr__ = __str__
-
-    def __add__(self, other):
-        return (
-            ModInt(self.x + other.x) if isinstance(other, ModInt) else
-            ModInt(self.x + other)
-        )
-
-    def __sub__(self, other):
-        return (
-            ModInt(self.x - other.x) if isinstance(other, ModInt) else
-            ModInt(self.x - other)
-        )
-
-    def __mul__(self, other):
-        return (
-            ModInt(self.x * other.x) if isinstance(other, ModInt) else
-            ModInt(self.x * other)
-        )
-
-    def __truediv__(self, other):
-        return (
-            ModInt(
-                self.x * pow(other.x, MOD - 2, MOD)
-            ) if isinstance(other, ModInt) else
-            ModInt(self.x * pow(other, MOD - 2, MOD))
-        )
-
-    def __pow__(self, other):
-        return (
-            ModInt(pow(self.x, other.x, MOD)) if isinstance(other, ModInt) else
-            ModInt(pow(self.x, other, MOD))
-        )
-
-    __radd__ = __add__
-
-    def __rsub__(self, other):
-        return (
-            ModInt(other.x - self.x) if isinstance(other, ModInt) else
-            ModInt(other - self.x)
-        )
-
-    __rmul__ = __mul__
-
-    def __rtruediv__(self, other):
-        return (
-            ModInt(
-                other.x * pow(self.x, MOD - 2, MOD)
-            ) if isinstance(other, ModInt) else
-            ModInt(other * pow(self.x, MOD - 2, MOD))
-        )
-
-    def __rpow__(self, other):
-        return (
-            ModInt(pow(other.x, self.x, MOD)) if isinstance(other, ModInt) else
-            ModInt(pow(other, self.x, MOD))
-        )
-
+mod = 998244353
 
 N = int(input())
-A = list(map(ModInt, input().split()))
-
-
-dp = [ModInt(0)]*N
+A = list(map(int, input().split()))
