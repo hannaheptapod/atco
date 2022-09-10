@@ -1,30 +1,26 @@
+from collections import defaultdict
 from bisect import insort
-import array
 
 N = int(input())
-dic = {i: [] for i in range(N)}
-ps = {}
-dp = []
+primes = defaultdict(lambda: [0])
+A = [[] for _ in range(N)]
 for i in range(N):
     m = int(input())
     for _ in range(m):
         p, e = map(int, input().split())
-        dic[i].append([p, e])
+        insort(primes[p], e)
+        A[i].append((p, e))
 
-        if p not in ps:
-            ps[p] = [0]
-            insort(dp, p)
-        insort(ps[p], e)
+id = {p: i for i, p in enumerate(sorted(primes.keys()))}
 
 st = set()
-M = len(ps)
-for i in range(N):
-    arr = array.array('i', [])
+for ai in A:
+    tmp = [1]*len(primes)
 
-    for p, e in dic[i]:
-        if ps[p][-2] < e: insort(arr, p)
+    for p, e in ai:
+        if primes[p][-2] < e: tmp[id[p]] = 0
 
-    st.add(''.join(str(ai) for ai in arr))
+    st.add(''.join(map(str, tmp)))
 
 ans = len(st)
 print(ans)
