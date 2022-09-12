@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/Users/jink/Programme/proc/ac-library"
             ],
             "defines": [],
             "macFrameworkPath": [],

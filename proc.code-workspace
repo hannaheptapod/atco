@@ -12,6 +12,8 @@
 	],
 	"settings": {
 		"python.defaultInterpreterPath": "/opt/homebrew/Caskroom/mambaforge/base/envs/proc/bin/python",
-		"python.terminal.activateEnvInCurrentTerminal": true
+		"python.terminal.activateEnvInCurrentTerminal": true,
+		"python.autoComplete.extraPaths": [],
+		"python.analysis.extraPaths": []
 	}
 }
