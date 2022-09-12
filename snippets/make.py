@@ -1,18 +1,16 @@
 import sys
-from pyperclip import copy
+import os
+import json
+
+DIR_P = 'py'
+DIR_J = '/Users/jink/Programme/proc/.vscode/atcoder.code-snippets'
 
 args = sys.argv
-name = input('Input the name of snippet:') if len(args) == 1 else args[1]
+if len(args) > 1: files = args[1:]
+else: files = [f[:-3] for f in os.listdir(DIR_P) if os.path.isfile(os.path.join(DIR_P, f)) and f.endswith('.py')]
 
-try:
-    with open('py/'+name+'.py') as src: l = map(lambda x: '        "'+x[:-1]+'",', src.readlines())
-    with open('txt/'+name+'.txt', mode='w') as txt:
-        txt.write('"'+name+'": {\n')
-        txt.write('    "prefix": "'+name+'",\n')
-        txt.write('    "body": [\n')
-        txt.write('\n'.join(l))
-        txt.write('\n    ],\n')
-        txt.write('},')
-    with open('txt/'+name+'.txt') as src: copy(''.join(src.readlines()))
-except Exception as e: print(e)
-else: print('The operation is successful. The snippet has been copied to the clipboard.')
+for file in files:
+    with open('py/'+file+'.py') as src: body = src.read().splitlines()
+    with open(DIR_J, 'r') as f: snippets = json.load(f)
+    snippets[file] = {"prefix": file, "body": body, "description": file}
+    with open(DIR_J, 'w') as f: json.dump(snippets, f, indent=4, sort_keys=True)
