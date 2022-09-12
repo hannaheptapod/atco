@@ -1,17 +1,22 @@
-import sys
-sys.setrecursionlimit(10**9)
-
-class Node:
-    def __init__(self):
-        self.parent = -1
-        self.children = []
+from collections import defaultdict, deque
 
 N, Q = map(int, input().split())
-graph = [[] for _ in range(N)]
+G = defaultdict(lambda: set())
 for _ in range(N-1):
-    a, b = map(int, input().split())
-    graph[a-1].append(b-1)
-    graph[b-1].append(a-1)
+    a, b = map(lambda x: int(x)-1, input().split())
+    G[a].add(b)
+    G[b].add(a)
+P = [0]*N
+for _ in range(Q):
+    p, x = map(int, input().split())
+    P[p-1] += x
 
-tree = [Node() for _ in range(N)]
+deq = deque([[0, -1]])
+while deq:  # imos法
+    v, pa = deq.pop()
+    for u in G[v]:
+        if u == pa: continue
+        P[u] += P[v]
+        deq.append([u, v])
 
+print(*P)
