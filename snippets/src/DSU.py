@@ -1,27 +1,3 @@
-def main():
-    N, M, K = map(int, input().split())
-
-    ans = [0]*N
-    dsu = DSU(N)
-
-    for _ in range(M):
-        a, b = map(lambda x: int(x)-1, input().split())
-        ans[a] -= 1
-        ans[b] -= 1
-        dsu.merge(a, b)
-
-    for _ in range(K):
-        c, d = map(lambda x: int(x)-1, input().split())
-        if dsu.same(c, d):
-            ans[c] -= 1
-            ans[d] -= 1
-
-    for g in dsu.groups():
-        for i in g: ans[i] += len(g)-1
-
-    print(*ans)
-
-
 class DSU:
     def __init__(self, n):
         self._n = n
@@ -57,6 +33,3 @@ class DSU:
         result = [[] for _ in range(self._n)]
         for i in range(self._n): result[leader_buf[i]].append(i)
         return [r for r in result if r != []]
-
-
-if __name__ == '__main__': main()

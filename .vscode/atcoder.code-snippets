@@ -1,4 +1,132 @@
 {
+    "Barrett": {
+        "body": [
+            "class Barrett:",
+            "    def mul(self, a, b):",
+            "        assert 0 <= a < self._m",
+            "        assert 0 <= b < self._m",
+            "        z = a * b",
+            "        v = z - ((z * self.im)>>64) * self._m",
+            "        if v < 0: v += self._m",
+            "        return v"
+        ],
+        "description": [
+            "https://qiita.com/R_olldIce/items/cebb1f15bf482fddd85e#4-barrett"
+        ],
+        "prefix": "Barrett"
+    },
+    "DSU": {
+        "body": [
+            "class DSU:",
+            "    def __init__(self, n):",
+            "        self._n = n",
+            "        self.parent_or_size = [-1] * n",
+            "",
+            "    def merge(self, a, b):",
+            "        assert 0 <= a < self._n",
+            "        assert 0 <= b < self._n",
+            "        x, y = self.leader(a), self.leader(b)",
+            "        if x == y: return x",
+            "        if -self.parent_or_size[x] < -self.parent_or_size[y]: x, y = y, x",
+            "        self.parent_or_size[x] += self.parent_or_size[y]",
+            "        self.parent_or_size[y] = x",
+            "        return x",
+            "",
+            "    def same(self, a, b):",
+            "        assert 0 <= a < self._n",
+            "        assert 0 <= b < self._n",
+            "        return self.leader(a) == self.leader(b)",
+            "",
+            "    def leader(self, a):",
+            "        assert 0 <= a < self._n",
+            "        if self.parent_or_size[a] < 0: return a",
+            "        self.parent_or_size[a] = self.leader(self.parent_or_size[a])",
+            "        return self.parent_or_size[a]",
+            "",
+            "    def size(self, a):",
+            "        assert 0 <= a < self._n",
+            "        return -self.parent_or_size[self.leader(a)]",
+            "",
+            "    def groups(self):",
+            "        leader_buf = [self.leader(i) for i in range(self._n)]",
+            "        result = [[] for _ in range(self._n)]",
+            "        for i in range(self._n): result[leader_buf[i]].append(i)",
+            "        return [r for r in result if r != []]"
+        ],
+        "description": [
+            "https://qiita.com/R_olldIce/items/93b8f13e0d33da4ac331"
+        ],
+        "prefix": "DSU"
+    },
+    "Dijkstra": {
+        "body": [
+            "from heapq import heappush, heappop",
+            "",
+            "",
+            "class Dijkstra:",
+            "    class Edge:",
+            "        def __init__(self, end, cost):",
+            "            self.to = end",
+            "            self.cost = cost",
+            "",
+            "    def __init__(self, node_size, inf):",
+            "        self._node = node_size",
+            "        self._graph = [[] for _ in range(self._node)]",
+            "        self.inf = inf",
+            "        self.dist = [self.inf for _ in range(self._node)]",
+            "",
+            "    def add_edge(self, st, ed, cost):",
+            "        self._graph[st].append(self.Edge(ed, cost))",
+            "        self._graph[ed].append(self.Edge(st, cost))",
+            "",
+            "    def solve(self, start):",
+            "        que = []",
+            "        self.dist[start] = 0",
+            "        heappush(que, (0, start))",
+            "        while que:",
+            "            cur_cost, cur_vertex = heappop(que)",
+            "            if self.dist[cur_vertex] < cur_cost:",
+            "                continue",
+            "            for e in self._graph[cur_vertex]:",
+            "                if self.dist[e.to] > cur_cost + e.cost:",
+            "                    self.dist[e.to] = cur_cost + e.cost",
+            "                    heappush(que, (self.dist[e.to], e.to))"
+        ],
+        "description": [
+            "https://kopricky.github.io/code/For_Python/dijkstra.html"
+        ],
+        "prefix": "Dijkstra"
+    },
+    "FenwickTree": {
+        "body": [
+            "class FenwickTree:",
+            "    def __init__(self, n):",
+            "        self._n = n",
+            "        self.data = [0] * n",
+            "",
+            "    def add(self, p, x):",
+            "        assert 0 <= p < self._n",
+            "        p += 1",
+            "        while p <= self._n:",
+            "            self.data[p - 1] += x",
+            "            p += p & -p",
+            "",
+            "    def sum(self, l, r):",
+            "        assert 0 <= l <= r <= self._n",
+            "        return self._sum(r) - self._sum(l)",
+            "",
+            "    def _sum(self, r):",
+            "        s = 0",
+            "        while r > 0:",
+            "            s += self.data[r - 1]",
+            "            r -= r & -r",
+            "        return s"
+        ],
+        "description": [
+            "https://qiita.com/R_olldIce/items/f2f7930e7f67963f0493"
+        ],
+        "prefix": "FenwickTree"
+    },
     "Namori": {
         "body": [
             "import sys",
@@ -65,7 +193,9 @@
             "                    if self.root[v] >= 0: continue",
             "                    deq.append(v)"
         ],
-        "description": "Namori",
+        "description": [
+            "https://kopricky.github.io/code/GraphDecomposition/namori.html"
+        ],
         "prefix": "Namori"
     },
     "SegTree": {
@@ -110,16 +240,33 @@
             "",
             "    def all_prod(self): return self._d[1]"
         ],
-        "description": "SegTree",
+        "description": [
+            "https://qiita.com/R_olldIce/items/f2f7930e7f67963f0493"
+        ],
         "prefix": "SegTree"
     },
-    "pow_mod": {
+    "inv_gcd": {
         "body": [
-            "def pow_mod(a, n, mod=MOD):",
-            "    if not n: return 1",
-            "    return (a*pow_mod(a, n-1) if n%2 else pow_mod(a**2%mod, n>>1))%mod"
+            "def inv_gcd(a, b):",
+            "    a %= b",
+            "    if a == 0: return b, 0",
+            "    s, t = b, a",
+            "    m0, m1 = 0, 1",
+            "    while t:",
+            "        u = s // t",
+            "",
+            "        s -= t * u",
+            "        m0 -= m1 * u",
+            "",
+            "        s, t = t, s",
+            "        m0, m1 = m1, m0",
+            "",
+            "    if m0 < 0: m0 += b // s",
+            "    return s, m0"
         ],
-        "description": "pow_mod",
-        "prefix": "pow_mod"
+        "description": [
+            "https://qiita.com/R_olldIce/items/cebb1f15bf482fddd85e#3-inv_gcd"
+        ],
+        "prefix": "inv_gcd"
     }
 }
