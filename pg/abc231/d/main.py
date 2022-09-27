@@ -1,50 +1,57 @@
-from collections import defaultdict
+from collections import Counter
 
 
-class UnionFind():
+class DSU:
     def __init__(self, n):
-        self.n = n
-        self.root = [-1]*(n+1)
-        self.rank = [0]*(n+1)
+        self._n = n
+        self.parent_or_size = [-1] * n
 
-    def find(self, x):
-        if(self.root[x] < 0): return x
-        else:
-            self.root[x] = self.find(self.root[x])
-            return self.root[x]
+    def merge(self, a, b):
+        assert 0 <= a < self._n
+        assert 0 <= b < self._n
+        x, y = self.leader(a), self.leader(b)
+        if x == y: return x
+        if -self.parent_or_size[x] < -self.parent_or_size[y]: x, y = y, x
+        self.parent_or_size[x] += self.parent_or_size[y]
+        self.parent_or_size[y] = x
+        return x
 
-    def unite(self, x, y):
-        x = self.find(x)
-        y = self.find(y)
+    def same(self, a, b):
+        assert 0 <= a < self._n
+        assert 0 <= b < self._n
+        return self.leader(a) == self.leader(b)
 
-        if(x == y): return
-        elif(self.rank[x] > self.rank[y]):
-            self.root[x] += self.root[y]
-            self.root[y] = x
-        else:
-            self.root[y] += self.root[x]
-            self.root[x] = y
-            if(self.rank[x] == self.rank[y]): self.rank[y] += 1
+    def leader(self, a):
+        assert 0 <= a < self._n
+        if self.parent_or_size[a] < 0: return a
+        self.parent_or_size[a] = self.leader(self.parent_or_size[a])
+        return self.parent_or_size[a]
 
-    def same(self, x, y): return self.find(x) == self.find(y)
+    def size(self, a):
+        assert 0 <= a < self._n
+        return -self.parent_or_size[self.leader(a)]
 
-    def size(self, x): return -self.root[self.find(x)]
-
-    def roots(self): return [i for i, x in enumerate(self.root) if x < 0]
-
-    def group_size(self): return len(self.roots())
-
-    def group_members(self):
-        group_members = defaultdict(list)
-
-        for member in range(self.n): group_members[self.find(member)].append(member)
-
-        return group_members
+    def groups(self):
+        leader_buf = [self.leader(i) for i in range(self._n)]
+        result = [[] for _ in range(self._n)]
+        for i in range(self._n): result[leader_buf[i]].append(i)
+        return [r for r in result if r != []]
 
 
-N, M = map(int, input().split())
-G = [[] for _ in range(N)]
-for _ in range(M):
-    a, b = map(lambda x: int(x)-1, input().split())
-    G[a].append(b)
-    G[b].append(a)
+def main():
+    N, M = map(int, input().split())
+    cnt, dsu = Counter(), DSU(N)
+    ans = 'No'
+    for _ in range(M):
+        a, b = map(lambda x: int(x)-1, input().split())
+        if max(cnt[a], cnt[b]) >= 2: break
+        cnt[a] += 1
+        cnt[b] += 1
+        if dsu.same(a, b): break
+        dsu.merge(a, b)
+    else: ans = 'Yes'
+
+    print(ans)
+
+
+if __name__ == '__main__': main()
