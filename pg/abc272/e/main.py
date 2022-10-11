@@ -1,7 +1,15 @@
 def main():
+    global N, M, A
     N, M = map(int, input().split())
     A = list(map(int, input().split()))
 
+    st = make_set()
+
+    ans = [mex(sorted(s)) for s in st[1:]]
+    print(*ans, sep='\n')
+
+
+def make_set():
     st = [set() for _ in range(M+1)]
 
     for i in range(N):
@@ -15,7 +23,7 @@ def main():
             st[x].add(ai)
             ai += i+1
 
-    for s in st[1:]: print(mex(sorted(s)))
+    return st
 
 
 def mex(arr):
