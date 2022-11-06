@@ -17,8 +17,8 @@ def main():
 
     if len(nbh) < 2: ans = 'No'
     else:
-        for (si, sj), (gi, gj) in combinations(nbh, 2):
-            d = dfs((si, sj), (gi, gj))
+        for s, g in combinations(nbh, 2):
+            d = dfs(s, g)
             if d > 0:
                 ans = 'Yes'
                 break
