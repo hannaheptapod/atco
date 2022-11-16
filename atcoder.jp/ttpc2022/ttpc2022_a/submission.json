@@ -1,0 +1,12 @@
+{
+	"id": 36526976,
+	"epoch_second": 1668565190,
+	"problem_id": "ttpc2022_a",
+	"contest_id": "ttpc2022",
+	"user_id": "hannaheptapod",
+	"language": "PyPy3 (7.3.0)",
+	"point": 200,
+	"length": 399,
+	"result": "AC",
+	"execution_time": 72
+}
