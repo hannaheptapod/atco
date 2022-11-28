@@ -5,6 +5,8 @@ def main():
     H, M = map(int, input().split())
 
     fr = H*60 + M
+    h0, m0 = divmod(fr, 60)
+
     for time in chain(range(fr, 24*60), range(fr)):
         h0, m0 = divmod(time, 60)
         h1, m1 = 10*(h0//10)+m0//10, 10*(h0%10)+m0%10

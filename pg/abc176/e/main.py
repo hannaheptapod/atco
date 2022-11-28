@@ -4,18 +4,24 @@ from collections import Counter
 def main():
     H, W, M = map(int, input().split())
     st = set()
-    row, col = Counter(), Counter()
+    rows, cols = Counter(), Counter()
     for _ in range(M):
         h, w = map(int, input().split())
         st.add((h, w))
-        row[h] += 1
-        col[w] += 1
+        rows[h] += 1
+        cols[w] += 1
 
-    row, col = (c.most_common()+[(0, 0)] for c in (row, col))
-    print(row, col)
+    rows, cols = (cnt.most_common()+[(0, 0)] for cnt in (rows, cols))
 
-    ans = row[0][1] + col[0][1]
-    if row[0][0] > row[0][1] and col[0][0] > col[0][1] and (row[0][0], col[0][0]) in st: ans -= 1
+    ans = rows[0][1] + cols[0][1]
+    rows, cols = ([i for i, n in arr if n == arr[0][1]] for arr in (rows, cols))
+
+    for r in rows:
+        for c in cols:
+            if (r, c) not in st: break
+        else: continue
+        break
+    else: ans -= 1
 
     print(ans)
 
