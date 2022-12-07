@@ -10,12 +10,9 @@ def main():
 
 
 def calc_ev(N, P):
-    if P == 0: return N
-    if P == 100: return -(-N//2)
+    dp = [0]*(N+1)
 
-    dp = [0]*(N+2)
-
-    for i in range(N):
+    for i in range(N-1):
         dp[i+1] += (dp[i]+1)*(100-P)*H_inv
         dp[i+1] %= MOD
 

@@ -11,6 +11,8 @@ def main():
 
     for u, v, _ in edges: dsu.merge(u, v)
 
+    print(dsu.groups())
+
 
 class DSU:
     def __init__(self, n):
@@ -47,26 +49,6 @@ class DSU:
         result = [[] for _ in range(self._n)]
         for i in range(self._n): result[leader_buf[i]].append(i)
         return [r for r in result if r != []]
-
-
-def bellman_ford(s, g):
-    d = [float('inf')]*(N+1)
-    d[s] = 0
-
-    for i in range(N):
-        update = False
-        for u, v, c in edges:
-            if d[v] > d[u] + c:
-                d[v] = d[u] + c
-                update = True
-            if d[u] > d[v] - c:
-                d[u] = d[v] - c
-                update = True
-        if not update: break
-
-        if i == N-1: return 'inf'
-
-    return d[g]
 
 
 if __name__ == '__main__': main()
