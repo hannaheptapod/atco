@@ -1,11 +1,6 @@
 import heapq
 
 
-def main():
-    N, M, K = map(int, input().split())
-    A = list(map(int, input().split()))
-
-
 class Multiset():
     def __init__(self):
         self.addset = []
@@ -22,6 +17,3 @@ class Multiset():
         return self.addset[0]
 
     def is_empty(self): return len(self.addset) - len(self.delset) <= 0
-
-
-if __name__ == '__main__': main()
