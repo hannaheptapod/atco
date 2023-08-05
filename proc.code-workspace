@@ -15,6 +15,10 @@
 		"python.terminal.activateEnvInCurrentTerminal": true,
 		"python.autoComplete.extraPaths": [],
 		"python.analysis.extraPaths": [],
-		"search.followSymlinks": false
+		"search.followSymlinks": false,
+		"[python]": {
+			"editor.defaultFormatter": "ms-python.autopep8"
+		},
+		"python.formatting.provider": "none"
 	}
 }
