@@ -1,0 +1,99 @@
+{
+  "contest": {
+    "id": "adt_all_20231107_2",
+    "title": "AtCoder Daily Training ALL 2023/11/7 17:30start",
+    "url": "https://atcoder.jp/contests/adt_all_20231107_2"
+  },
+  "tasks": [
+    {
+      "id": "abc261_a",
+      "label": "A",
+      "title": "Intersection",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc261_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc313_a",
+      "label": "B",
+      "title": "To Be Saikyo",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc313_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc234_b",
+      "label": "C",
+      "title": "Longest Segment",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc234_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc295_b",
+      "label": "D",
+      "title": "Bombs",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc295_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc215_c",
+      "label": "E",
+      "title": "One More aab aba baa",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc215_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc231_c",
+      "label": "F",
+      "title": "Counting 2",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc231_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc318_d",
+      "label": "G",
+      "title": "General Weighted Max Matching",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc318_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc242_e",
+      "label": "H",
+      "title": "(∀x∀)",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc242_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc307_f",
+      "label": "I",
+      "title": "Virus 2",
+      "url": "https://atcoder.jp/contests/adt_all_20231107_2/tasks/abc307_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test"
+      }
+    }
+  ]
+}

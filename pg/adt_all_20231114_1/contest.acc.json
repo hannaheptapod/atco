@@ -1,0 +1,99 @@
+{
+  "contest": {
+    "id": "adt_all_20231114_1",
+    "title": "AtCoder Daily Training ALL 2023/11/14 15:30start",
+    "url": "https://atcoder.jp/contests/adt_all_20231114_1"
+  },
+  "tasks": [
+    {
+      "id": "abc221_a",
+      "label": "A",
+      "title": "Seismic magnitude scales",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc221_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc228_a",
+      "label": "B",
+      "title": "On and Off",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc228_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc231_b",
+      "label": "C",
+      "title": "Election",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc231_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc310_b",
+      "label": "D",
+      "title": "Strictly Superior",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc310_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc265_c",
+      "label": "E",
+      "title": "Belt Conveyor",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc265_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc322_c",
+      "label": "F",
+      "title": "Festival",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc322_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc248_d",
+      "label": "G",
+      "title": "Range Count Query",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc248_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc322_e",
+      "label": "H",
+      "title": "Product Development",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc322_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc294_f",
+      "label": "I",
+      "title": "Sugar Water 2",
+      "url": "https://atcoder.jp/contests/adt_all_20231114_1/tasks/abc294_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test"
+      }
+    }
+  ]
+}

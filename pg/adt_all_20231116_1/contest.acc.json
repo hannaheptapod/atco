@@ -1,0 +1,99 @@
+{
+  "contest": {
+    "id": "adt_all_20231116_1",
+    "title": "AtCoder Daily Training ALL 2023/11/16 16:30start",
+    "url": "https://atcoder.jp/contests/adt_all_20231116_1"
+  },
+  "tasks": [
+    {
+      "id": "abc314_a",
+      "label": "A",
+      "title": "3.14",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc314_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc238_a",
+      "label": "B",
+      "title": "Exponential or Quadratic",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc238_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc279_b",
+      "label": "C",
+      "title": "LOOKUP",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc279_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc275_b",
+      "label": "D",
+      "title": "ABC-DEF",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc275_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc229_c",
+      "label": "E",
+      "title": "Cheese",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc229_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc256_c",
+      "label": "F",
+      "title": "Filling 3x3 array",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc256_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc324_d",
+      "label": "G",
+      "title": "Square Permutation",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc324_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc231_e",
+      "label": "H",
+      "title": "Minimal payments",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc231_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc262_f",
+      "label": "I",
+      "title": "Erase and Rotate",
+      "url": "https://atcoder.jp/contests/adt_all_20231116_1/tasks/abc262_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test"
+      }
+    }
+  ]
+}

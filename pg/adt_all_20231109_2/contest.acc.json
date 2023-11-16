@@ -1,0 +1,99 @@
+{
+  "contest": {
+    "id": "adt_all_20231109_2",
+    "title": "AtCoder Daily Training ALL 2023/11/9 18:30start",
+    "url": "https://atcoder.jp/contests/adt_all_20231109_2"
+  },
+  "tasks": [
+    {
+      "id": "abc251_a",
+      "label": "A",
+      "title": "Six Characters",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc251_a",
+      "directory": {
+        "path": "a",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc216_a",
+      "label": "B",
+      "title": "Signed Difficulty",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc216_a",
+      "directory": {
+        "path": "b",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc280_b",
+      "label": "C",
+      "title": "Inverse Prefix Sum",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc280_b",
+      "directory": {
+        "path": "c",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc260_b",
+      "label": "D",
+      "title": "Better Students Are Needed!",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc260_b",
+      "directory": {
+        "path": "d",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc261_c",
+      "label": "E",
+      "title": "NewFolder(1)",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc261_c",
+      "directory": {
+        "path": "e",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc232_c",
+      "label": "F",
+      "title": "Graph Isomorphism",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc232_c",
+      "directory": {
+        "path": "f",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc282_d",
+      "label": "G",
+      "title": "Make Bipartite 2",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc282_d",
+      "directory": {
+        "path": "g",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc265_e",
+      "label": "H",
+      "title": "Warp",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc265_e",
+      "directory": {
+        "path": "h",
+        "testdir": "test"
+      }
+    },
+    {
+      "id": "abc241_f",
+      "label": "I",
+      "title": "Skate",
+      "url": "https://atcoder.jp/contests/adt_all_20231109_2/tasks/abc241_f",
+      "directory": {
+        "path": "i",
+        "testdir": "test"
+      }
+    }
+  ]
+}

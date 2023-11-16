@@ -19,6 +19,11 @@
 		"[python]": {
 			"editor.defaultFormatter": "ms-python.autopep8"
 		},
-		"python.formatting.provider": "none"
+		"audioCues.lineHasInlineSuggestion": "off",
+		"autopep8.args": [
+			"--ignore=E225, E226, E227, E228, E701, E704",
+			"--max-line-length=99"
+		],
+		"editor.defaultFormatter": "ms-python.autopep8"
 	}
 }
