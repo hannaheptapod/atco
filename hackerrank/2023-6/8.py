@@ -1,27 +1,31 @@
+# KinderGarten Adventures
+
+
 def main():
     n = int(input())
     t = list(map(int, input().split()))
-    result = calculate_minimum_start_time(n, t)
-    print(result)
+    ans = solve(n, t)
+    print(ans)
 
 
-def calculate_minimum_start_time(n, t):
-    time_diff = [0]*n
-    late_students = 0
-    for i, time in enumerate(t):
-        if time:
-            time_diff[(n+i-(time-1))%n]+=1
-        if time > i:
-            late_students += 1
-    min_late_students = late_students
-    min_start_time = 0
-    for i in range(1, n):
-        late_students += time_diff[i]
-        late_students -= int(time_needed[i-1]!=0)
-        if late_students < min_late_students:
-            min_start_time = i
-            min_late_students = late_students
-    return min_start_time+1
+def solve(n, t):
+    diff = [0] * n
+
+    for i, ti in enumerate(t):
+        if ti == 0:
+            diff[0] += 1
+        else:
+            diff[(i + 1) % n] += 1
+            diff[(i + 1 + ti) % n] -= 1
+
+    acm = [0] * (n + 1)
+    mx, idx = 0, 0
+    for i in range(n):
+        acm[i + 1] = acm[i] + diff[i]
+        if acm[i + 1] > mx:
+            mx, idx = acm[i + 1], i + 1
+
+    return idx
 
 
 if __name__ == '__main__': main()
